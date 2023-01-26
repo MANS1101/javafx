@@ -12,8 +12,9 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			GridPane root = (GridPane)FXMLLoader.load(getClass().getResource("Sample.fxml"));
-			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			Scene scene = new Scene(root);
+			
+			primaryStage.setTitle("GridPane");
 			primaryStage.setScene(scene);
 			primaryStage.show();
 		} catch(Exception e) {

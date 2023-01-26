@@ -1,1 +1,18 @@
-dsad
+GridPane
+1. 그리드로 컨트롤을 배치하되 셀의 크기가 고정적이지 않고 유동적인 컨테이너이다.
+2. 셀병합이 가능하기 때문에 다양한 입력폼 화면을 만들 때 매우 유용할게 사용할 수 있다.
+3. 각 컨트롤은 자신이 배치될 행 인덱스와 컬럼 인덱스를 속성으로 가지며, 몇 개의 셀을 병합할 것인지도 지정할 수 있다.
+
+주요설정
+prefWidth - 폭을 설정
+prefHeight - 높이를 설정
+hgap - 컨트롤의 수평 간격을 설정
+vgap - 컨트롤의 수직 간격을 설정
+GridPane.rowIndex - 컨트롤이 위치하는 행 인덱스를 설정
+GridPane.columnIndex - 컨트롤이 위치하는 열 인덱스를 설정
+GridPane.rowSpan - 행 병합 수를 설정
+GridPane.columnSpan - 열 병합 수를 설정
+GridPane.hgrow - 수평 빈 공간 채우기를 설정
+GridPane.vgrow - 수직 빈 공간 채우기를 설정
+GridPane.haligment - 컨트롤의 수평 정렬을 설정
+GridPane.valigment - 컨트롤의 수직 정렬을 설정
