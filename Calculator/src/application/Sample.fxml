@@ -14,7 +14,7 @@
    <top>
       <Label fx:id="resultLabel" alignment="CENTER_RIGHT" prefHeight="150.0" prefWidth="500.0" style="-fx-background-color: #333;" textFill="WHITE" textOverrun="CLIP" BorderPane.alignment="CENTER">
          <font>
-            <Font size="40.0" />
+            <Font name="Arial" size="40.0" />
          </font>
       </Label>
    </top>
@@ -91,11 +91,6 @@
                   <Font name="Baskerville BT" size="36.0" />
                </font>
             </Button>
-            <Button fx:id="btnMulti" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ccc;" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
-               <font>
-                  <Font name="Baskerville BT" size="36.0" />
-               </font>
-            </Button>
             <Button fx:id="btnClear" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #000;" text="C" textFill="WHITE" GridPane.halignment="CENTER" GridPane.rowIndex="3">
                <font>
                   <Font name="Baskerville BT" size="36.0" />
@@ -112,6 +107,11 @@
                </font>
             </Button>
             <Button fx:id="btnDivide" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ccc;" text="/" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Baskerville BT" size="36.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnMulti" mnemonicParsing="false" prefHeight="80.0" prefWidth="80.0" style="-fx-background-color: #ccc;" text="*" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <font>
                   <Font name="Baskerville BT" size="36.0" />
                </font>

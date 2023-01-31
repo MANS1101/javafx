@@ -32,7 +32,7 @@ public class SampleController implements Initializable{
 	private Button btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9;
 	
 	@FXML
-	private Button btnPlus, btnMinus, btnbtnMulti, btnClear, btnEqual, btnDivide;
+	private Button btnPlus, btnMinus, btnMulti, btnClear, btnEqual, btnDivide;
 	
 	// EventHandler 등록
 	@Override
@@ -57,11 +57,19 @@ public class SampleController implements Initializable{
 		
 		btnClear.setOnAction(event->calculatorClear());
 		
+		btnPlus.setOnAction(event->calculateOperator(event));
+		btnMinus.setOnAction(event->calculateOperator(event));
+		btnDivide.setOnAction(event->calculateOperator(event));
+		btnMulti.setOnAction(event->calculateOperator(event));
+		
+		btnEqual.setOnAction(event->calculateEqualOperator(event));
+		
 	}
+	// 숫자 버튼
 	public void calculateNumber(ActionEvent event) {
 		// 버튼 이벤트 발생시 해당 버튼의 텍스트값을 int형으로 변환하는 작업
 		int n = Integer.parseInt(((Button) event.getSource()).getText());
-		if(mode == status._1of3 || mode == status._3of3) {
+		if(mode == status._1of3 || mode == status._2of3) {
 			String labelTxt = "";
 			// 처음 입력되는 숫자가 0일경우에 처리하는 방
 			if(!resultLabel.getText().equals("0")) {
@@ -70,6 +78,30 @@ public class SampleController implements Initializable{
 			resultLabel.setText(labelTxt + Integer.toString(n));
 		}
 	}
+	// 연산자 버튼
+	public void calculateOperator(ActionEvent event) {
+		String op = ((Button)event.getSource()).getText();
+		if ((mode == status._1of3 || mode == status._3of3) && !resultLabel.getText().isBlank()){
+			operator = op;
+			x = Integer.parseInt(resultLabel.getText());
+			resultLabel.setText("");
+			mode = status._2of3;
+			logTextArea.appendText(Integer.toString(x) + " " + op + " ");
+		}
+	}
+	
+	// = 버튼
+	public void calculateEqualOperator(ActionEvent event) {
+		if (mode == status._2of3 && !resultLabel.getText().isBlank()) {
+			logTextArea.appendText(resultLabel.getText() + " = ");
+			String theResult = model.calculate(operator, x, Integer.parseInt(resultLabel.getText()));
+			resultLabel.setText(theResult);
+			logTextArea.appendText(theResult + "\n");
+			mode = status._3of3;
+		}
+	}
+	
+	// Clear 버튼
 	public void calculatorClear() {
 		resultLabel.setText("");
 		logTextArea.clear();
